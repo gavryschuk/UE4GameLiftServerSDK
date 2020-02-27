@@ -27,8 +27,9 @@ void FGameLiftServerSDKModule::StartupModule()
         #if WITH_GAMELIFT
             FString BaseDir = IPluginManager::Get().FindPlugin("GameLiftServerSDK")->GetBaseDir();
             const FString SDKDir = FPaths::Combine(*BaseDir, TEXT("ThirdParty"), TEXT("GameLiftServerSDK"));
+			const FString LibDir = FPaths::Combine(*SDKDir, TEXT("Win64"));
+
             const FString LibName = TEXT("aws-cpp-sdk-gamelift-server");
-            const FString LibDir = FPaths::Combine(*SDKDir, TEXT("Win64"));
             if (!LoadDependency(LibDir, LibName, GameLiftServerSDKLibraryHandle))
             {
                 FMessageDialog::Open(EAppMsgType::Ok, LOCTEXT(LOCTEXT_NAMESPACE, "Failed to load aws-cpp-sdk-gamelift-server library. Plug-in will not be functional."));
