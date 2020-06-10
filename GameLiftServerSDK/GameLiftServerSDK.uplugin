@@ -14,11 +14,11 @@
 	"CanContainContent": false,
 	"IsBetaVersion": false,
 	"Installed": false,
-  	"Modules": [
-   	  {
-      	"Name": "GameLiftServerSDK",
-      	"Type": "Runtime",
-      	"LoadingPhase": "PreDefault"
-      }
-   ]
+	"Modules": [
+		{
+			"Name": "GameLiftServerSDK",
+			"Type": "Runtime",
+			"LoadingPhase": "PreDefault"
+		}
+	]
 }

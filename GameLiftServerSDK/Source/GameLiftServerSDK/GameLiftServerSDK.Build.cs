@@ -13,17 +13,46 @@
 */
 
 using UnrealBuildTool;
-using System.IO;
 
 public class GameLiftServerSDK : ModuleRules
 {
     public GameLiftServerSDK(ReadOnlyTargetRules Target) : base (Target)
     {
-        PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs;
-        PrivateIncludePaths.Add(Path.Combine(ModuleDirectory, "Private"));
-        PublicIncludePaths.Add(Path.Combine(ModuleDirectory, "Public"));
+        PublicIncludePaths.AddRange(
+            new string[] {
+            "GameLiftServerSDK/Public"
+            }
+            );
 
-        PublicDependencyModuleNames.AddRange(new string[] { "Core", "Projects"});
+
+        PrivateIncludePaths.AddRange(
+            new string[] {
+            "GameLiftServerSDK/Private",
+            }
+            );
+
+
+        PublicDependencyModuleNames.AddRange(
+            new string[]
+            {
+            "Core",
+            "Projects"
+            }
+            );
+
+
+        PrivateDependencyModuleNames.AddRange(
+            new string[]
+            {
+            }
+            );
+
+
+        DynamicallyLoadedModuleNames.AddRange(
+            new string[]
+            {
+            }
+            );
 
         PublicDefinitions.Add("USE_IMPORT_EXPORT");
         PublicDefinitions.Add("USE_WINDOWS_DLL_SEMANTICS");
